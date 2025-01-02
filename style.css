@@ -1,0 +1,261 @@
+/* Global Styles */
+body {
+  margin: 0;
+  font-family: 'Varela Round', serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+/* Thèmes clair et sombre */
+:root {
+  --background-color: #FFFFFF; /* Light background */
+  --text-color: #0C0C0C; /* Dark text */
+}
+
+[data-theme="dark"] {
+  --background-color: #0C0C0C; /* Dark background */
+  --text-color: #FFFFFF; /* Light text */
+}
+
+.right-side h1, .right-side p {
+  color: var(--text-color); /* Use the variable for text color */
+}
+
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 250px;
+  height: 100%;
+  background-color: #717D7D; /* Sidebar background */
+  color: #FFFFFF; /* Sidebar text color */
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+  transition: left 0.3s ease-in-out;
+  z-index: 1000;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar ul li {
+  padding: 15px;
+  border-bottom: 1px solid #D7D7D7; /* Sidebar list item border */
+}
+
+.sidebar ul li a {
+  text-decoration: none;
+  color: #FFFFFF; /* Sidebar link color */
+  font-size: 16px;
+  display: block;
+}
+
+.sidebar-image-container {
+  text-align: center;
+  padding: 10px;
+}
+
+.sidebar-image {
+  width: 80%;
+  border-radius: 10%;
+}
+
+.close-btn {
+  position: absolute;
+  bottom: 10px;
+  right: 30px;
+  background-color: #D7D7D7; /* Close button background */
+  color: #0C0C0C; /* Close button text color */
+  padding: 10px;
+  border-radius: 20%;
+  cursor: pointer;
+}
+
+/* Header */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  padding: 10px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.chroma-logo {
+  max-width: 100%;
+  height: auto;
+  transition: width 0.3s ease-in-out, height 0.3s ease-in-out;
+}
+
+
+/* Dark mode */
+[data-theme="dark"] .chroma-logo {
+  filter: invert(1);
+}
+
+/* Hamburger Menu */
+.hamburger-menu {
+  display: flex;
+  flex-direction: column-reverse; /* Reverse the order of lines */
+  gap: 4px;
+  cursor: pointer;
+}
+
+.hamburger-menu .line {
+  width: 2rem;
+  height: 0.3rem;
+  background: var(--text-color);
+  border-radius: 0.5rem; /* Rounded borders */
+}
+
+/* Body */
+.content {
+  display: flex;
+  flex: 1;
+  padding: 20px;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.left-side {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-image {
+  width: 70%;
+  border-radius: 10%;
+  box-shadow: 0 0 8px rgba(1, 1, 1, 1); /* Centered shadow */
+}
+
+/* Dark mode */
+[data-theme="dark"] .profile-image {
+  box-shadow: none;
+}
+
+.right-side {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+  font-size: 1.5em;
+  color: var(--text-color);
+}
+
+.cursor {
+  display: inline-block;
+  margin-left: 5px;
+  width: 10px;
+  height: 1em;
+  background-color: var(--text-color);
+  animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+h1, p {
+  margin: 0;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .left-side, .right-side {
+    flex: none;
+    width: 100%;
+  }
+
+  .profile-image {
+    width: 50%;
+  }
+
+  .chroma-logo {
+    width: 50%;
+  }
+
+  .toggle-theme {
+    bottom: 20px;
+    right: 20px;
+  }
+}
+
+/* Bouton de changement de thème */
+.toggle-theme {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #D7D7D7; /* Slider background */
+  transition: .4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: #FFFFFF; /* Slider button */
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #717D7D; /* Slider background when checked */
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
