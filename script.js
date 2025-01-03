@@ -1,5 +1,5 @@
 // Sélecteurs pour les éléments
-const words = [" game development ", " coding ", " music ", " 3D projects "];
+const words = [" Back view ", " Everything ", " Bobody ", " Allllllllllllioehfuheuofhziefhiehfpozehfiheifhzeiphf "];
 let wordIndex = 0;
 let charIndex = 0;
 let isDeleting = false;
