@@ -1,15 +1,30 @@
 /* Global Styles */
 body {
   margin: 0;
-  font-family: 'Arial', sans-serif;
-  background-image: url('cloud.jpg'); /* Background image */
+  font-family: 'Varela Round', serif;
+  background-image: url('loop.gif'); /* Background image */
   background-size: cover;
   background-position: center;
   color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  min-height: 100vh;
+  transition: filter 1s ease-in-out; /* Smooth transition for filter */
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: inherit;
+  background-size: cover;
+  background-position: center;
+  filter: blur(5px); /* Blur effect for background image */
+  z-index: -1;
 }
 
 /* Main Section */
@@ -20,7 +35,17 @@ body {
   padding: 20px;
   border-radius: 2px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(10px); /* Blur effect */
+  backdrop-filter: blur(10px); /* Blur effect for box */
+  position: relative;
+  z-index: 0;
+  flex-direction: column; /* Change to column layout on smaller screens */
+}
+
+/* Media Queries for Responsiveness */
+@media (min-width: 768px) {
+  .main-section {
+    flex-direction: row; /* Change to row layout on larger screens */
+  }
 }
 
 .left-section {
