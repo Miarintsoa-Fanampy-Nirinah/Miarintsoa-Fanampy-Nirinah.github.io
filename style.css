@@ -14,6 +14,7 @@ body {
 :root {
   --background-color: #FFFFFF; /* Light background */
   --text-color: #0C0C0C; /* Dark text */
+  transition: background-color 0.5s ease, color 0.5s ease; /* Smooth transition */
 }
 
 [data-theme="dark"] {
@@ -23,6 +24,7 @@ body {
 
 .right-side h1, .right-side p {
   color: var(--text-color); /* Use the variable for text color */
+  transition: color 0.5s ease; /* Smooth transition for text color */
 }
 
 /* Sidebar */
@@ -35,7 +37,7 @@ body {
   background-color: #717D7D; /* Sidebar background */
   color: #FFFFFF; /* Sidebar text color */
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
-  transition: left 0.3s ease-in-out;
+  transition: left 0.3s ease-in-out, background-color 0.5s ease, color 0.5s ease;
   z-index: 1000;
 }
 
@@ -76,6 +78,7 @@ body {
   padding: 10px;
   border-radius: 20%;
   cursor: pointer;
+  transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 /* Header */
@@ -89,6 +92,7 @@ header {
   position: sticky;
   top: 0;
   z-index: 100;
+  transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 .chroma-logo {
@@ -96,7 +100,6 @@ header {
   height: auto;
   transition: width 0.3s ease-in-out, height 0.3s ease-in-out;
 }
-
 
 /* Dark mode */
 [data-theme="dark"] .chroma-logo {
@@ -116,6 +119,7 @@ header {
   height: 0.3rem;
   background: var(--text-color);
   border-radius: 0.5rem; /* Rounded borders */
+  transition: background-color 0.5s ease; /* Smooth transition for line color */
 }
 
 /* Body */
@@ -125,6 +129,7 @@ header {
   padding: 20px;
   background-color: var(--background-color);
   color: var(--text-color);
+  transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 .left-side {
