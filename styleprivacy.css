@@ -1,32 +1,24 @@
+/* styles.css */
 * {
     margin: 0;
+    font-family: 'Varela Round', serif;
     padding: 0;
     box-sizing: border-box;
 }
 
 body {
-    font-family: 'Varela Round', Arial, sans-serif;
-    background-color: #333; /* Couleur de fond identique à l'en-tête et au pied de page */
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
     color: #333;
     line-height: 1.6;
-    padding: 2rem; /* Ajouter un espace autour du body pour accentuer l'arrondi */
+    padding: 0 1rem; /* Ajout de padding global */
 }
 
-.container {
-    background-color: #fff; /* Couleur blanche pour le contenu principal */
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem;
-    border-radius: 16px; /* Arrondir les coins du conteneur principal */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ajout d'une ombre pour l'esthétique */
-}
-
-header, footer {
-    background-color: #333; /* Couleur foncée pour header et footer */
+header {
+    background-color: #333;
     color: #fff;
-    text-align: center;
     padding: 1rem;
-    border-radius: 16px; /* Arrondi pour header et footer */
+    text-align: center;
 }
 
 h1 {
@@ -38,6 +30,15 @@ h2 {
     margin-top: 1.5rem;
     border-bottom: 2px solid #333;
     padding-bottom: 0.5rem;
+}
+
+main {
+    max-width: 800px; /* Limiter la largeur du contenu */
+    margin: 0 auto; /* Centrer le contenu */
+    padding: 1rem; /* Espacement intérieur pour le contenu principal */
+    background-color: #fff; /* Optionnel : donner une couleur de fond au contenu */
+    border-radius: 8px; /* Coins arrondis pour un effet esthétique */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ajout d'une ombre douce */
 }
 
 p {
@@ -54,16 +55,9 @@ a:hover {
 }
 
 footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #333;
+    color: #fff;
     margin-top: 2rem;
-}
-
-/* Responsive : Ajuste le padding sur les écrans plus petits */
-@media (max-width: 768px) {
-    body {
-        padding: 1rem;
-    }
-
-    .container {
-        padding: 1rem;
-    }
 }
