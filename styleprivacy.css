@@ -11,7 +11,7 @@ body {
     background-color: #f4f4f4;
     color: #333;
     line-height: 1.6;
-    padding: 0 1rem; /* Ajout de padding global */
+   padding: 0; /* Supprimer les marges globales */
 }
 
 header {
@@ -33,12 +33,12 @@ h2 {
 }
 
 main {
-    max-width: 800px; /* Limiter la largeur du contenu */
+    max-width: 1200px; /* Augmenter la largeur maximale */
     margin: 0 auto; /* Centrer le contenu */
-    padding: 1rem; /* Espacement intérieur pour le contenu principal */
-    background-color: #fff; /* Optionnel : donner une couleur de fond au contenu */
-    border-radius: 8px; /* Coins arrondis pour un effet esthétique */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ajout d'une ombre douce */
+    padding: 1rem; /* Garder un espace intérieur pour le confort de lecture */
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 p {
@@ -60,4 +60,9 @@ footer {
     background-color: #333;
     color: #fff;
     margin-top: 2rem;
+}
+@media (min-width: 768px) {
+    body {
+        padding: 0 1rem; /* Ajouter un léger padding latéral uniquement sur les écrans plus larges */
+    }
 }
