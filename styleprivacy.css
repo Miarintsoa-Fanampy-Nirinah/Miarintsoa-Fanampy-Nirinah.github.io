@@ -1,24 +1,32 @@
-/* styles.css */
 * {
     margin: 0;
-    font-family: 'Varela Round', serif;
     padding: 0;
     box-sizing: border-box;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    font-family: 'Varela Round', Arial, sans-serif;
+    background-color: #333; /* Couleur de fond identique à l'en-tête et au pied de page */
     color: #333;
     line-height: 1.6;
-   padding: 0; /* Supprimer les marges globales */
+    padding: 2rem; /* Ajouter un espace autour du body pour accentuer l'arrondi */
 }
 
-header {
-    background-color: #333;
+.container {
+    background-color: #fff; /* Couleur blanche pour le contenu principal */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    border-radius: 16px; /* Arrondir les coins du conteneur principal */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ajout d'une ombre pour l'esthétique */
+}
+
+header, footer {
+    background-color: #333; /* Couleur foncée pour header et footer */
     color: #fff;
-    padding: 1rem;
     text-align: center;
+    padding: 1rem;
+    border-radius: 16px; /* Arrondi pour header et footer */
 }
 
 h1 {
@@ -30,15 +38,6 @@ h2 {
     margin-top: 1.5rem;
     border-bottom: 2px solid #333;
     padding-bottom: 0.5rem;
-}
-
-main {
-    max-width: 1200px; /* Augmenter la largeur maximale */
-    margin: 0 auto; /* Centrer le contenu */
-    padding: 1rem; /* Garder un espace intérieur pour le confort de lecture */
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 p {
@@ -55,14 +54,16 @@ a:hover {
 }
 
 footer {
-    text-align: center;
-    padding: 1rem;
-    background-color: #333;
-    color: #fff;
     margin-top: 2rem;
 }
-@media (min-width: 768px) {
+
+/* Responsive : Ajuste le padding sur les écrans plus petits */
+@media (max-width: 768px) {
     body {
-        padding: 0 1rem; /* Ajouter un léger padding latéral uniquement sur les écrans plus larges */
+        padding: 1rem;
+    }
+
+    .container {
+        padding: 1rem;
     }
 }
